@@ -1,0 +1,26 @@
+#banner
+  - var imgbox = 'imgbox-'+ page
+  div(class=imgbox)
+    - var array=[1,2,3,4]
+    each i in array
+      img(src=placeholder ,data-original='/images/index/banner_'+i+'.png')
+  if page == 'index'
+    #banner-tab
+      .tab
+        - var array=[1,2,3,4]
+        each i in array
+          div
+            div
+            img(src=placeholder ,data-original='/images/index/banner_'+i+'.png')
+    #banner-search
+      .banner-search-box
+        .banner-search-bar
+          form
+            input(type="text", placeholder="搜索你喜欢的")
+          i.fa.fa-search.fa-2x
+        .banner-search-labels
+          span 热门搜索：
+          - var items = {"艺术插画": '', "艺云设计师": '', "唯美壁纸": ''}
+          each val, key in items
+            span
+              a(href=val)= key

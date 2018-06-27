@@ -1,0 +1,126 @@
+// ---------- banner ---------- //
+$banner-width: 100%
+$banner-height: $header-height
+#banner
+  height: $banner-height
+  width: $banner-width
+  overflow: hidden
+  .imgbox-index
+    position: absolute
+    @include img-box($banner-width, $banner-height)
+    img
+      position: absolute
+      transition: opacity 1s
+      &:not(:first-of-type)
+        opacity: 0
+
+// ---------- banner-tab ---------- //
+#banner-tab
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  @include flex(center ,flex-end)
+  flex-direction: column-reverse
+  .tab
+    >div
+      position: relative
+      top: 0
+      right: 2rem
+      width: 4rem
+      height: 4rem
+      overflow: hidden
+      border-radius: 50%
+      background-color: white
+      opacity: 0.6
+      margin-bottom: 1rem
+      border: 2px solid white
+      z-index: 1
+      transition: all 0.4s
+      &:hover
+        cursor: pointer
+        box-shadow: 0 0 15px rgba(255,255,255,1)
+      >div
+        width: 4rem
+        height: 4rem
+        position: absolute
+        background-color: black
+        opacity: 0.5
+        z-index: 1
+      img
+        position: absolute
+        top: 0
+        left: -2rem
+        width: 8rem
+
+// ---------- Selected ---------- //
+.Selected
+  opacity: 1 !important
+  transform-origin: center
+  transform: scale(1.2)
+  div
+    width: 0em !important
+    transition: width 8s
+// ---------- banner-search ---------- //
+#banner-search
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  @include flex
+  .banner-search-box
+    position: relative
+    top: -2rem
+    opacity: 0.6
+    z-index: 1
+    transition: all 0.4s
+    &:hover
+      opacity: 1
+      transform-origin: center
+      transform: scale(1.05)
+      >.banner-search-bar
+        background-color: rgba(10, 10, 10, 0.4)
+    .banner-search-bar
+      width: 35rem
+      height: 4rem
+      border: 1px solid white
+      border-radius: 5px
+      -webkit-border-radius: 5px
+      box-shadow: 0 1px 3px #bebdbd
+      -webkit-box-shadow: 0 1px 3px #bebdbd
+      @include flex
+      input
+        width: 29rem
+        height: 3rem
+        background-color: transparent
+        outline: none
+        border: none
+        caret-color: white
+        color: white
+        font-size: 1.2rem
+      i
+        width: 2rem
+        height: 2rem
+        color: white
+        transition: all 0.7s
+        transform-origin: center
+        animation: orotate 1s infinite
+        -webkit-animation: orotate 1s ease
+        cursor: pointer
+        &:hover
+          animation: rotate 1s infinite
+          -webkit-animation: rotate 1s ease
+  .banner-search-labels
+    width: 35rem
+    height: 3rem
+    @include flex
+    span
+      margin: 0 1rem
+      &:first-of-type
+        color: $sub-text-color
+      a
+        color: white
+        &:hover
+          text-decoration: underline

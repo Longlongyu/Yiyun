@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css')
+  body
+    - var placeholder = "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="
+    include partial/base-header
+    block content
+    include partial/base-footer
+    script(src="/javascripts/lib/jquery.min.js" defer)
+    script(src="/javascripts/lib/jquery.lazyload.min.js" defer)
+    script(src="/javascripts/main.js" defer)

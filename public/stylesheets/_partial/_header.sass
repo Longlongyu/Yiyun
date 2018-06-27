@@ -1,0 +1,184 @@
+// ========== header ========== //
+header
+  height: $header-height
+
+// ========== nav ========== //
+#nav
+  position: fixed
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 3rem
+  z-index: 2
+  >img
+    width: 8rem
+    height: auto
+  >span
+    padding: 0.5rem
+  >span,>.nav-hr,>.nav-drop-more
+    margin-left: 1rem
+
+#nav-search
+  position: relative
+  &:hover>.search-bar
+    background-color: rgba(10, 10, 10, 0.1)
+  >.search-bar
+    height: 1.6rem
+    width: 25rem
+    border: 1px solid #CCCCCC
+    border-radius: 2px
+    position: relative
+    >i
+      position: absolute
+      top: 0.3rem
+      right: 0.5rem
+      opacity: 0.5
+      cursor: pointer
+      :hover
+        opacity: 1
+    >input
+      height: 1.6rem
+      width: 23rem
+      background-color: transparent
+      outline: none
+      border: none
+      caret-color: black
+      color: black
+      font-size: 0.8rem
+      position: absolute
+      top: 0.1rem
+      left: 0.5rem
+
+#nav-signup, #nav-signin
+  padding: 0.3rem 1.5rem
+  border-radius: 0.2rem
+  margin-left: 1rem
+  cursor: pointer
+  &:hover
+    transform-origin: center
+    transform: scale(1.1)
+
+// --------- nav-drop-more --------- //
+.nav-drop-more
+  align-self: flex-start
+  position: relative
+  top: 0.8rem
+  list-style: none
+  >i
+    font-size: 1.2rem
+  &:hover
+    height: 10rem
+    >.down-menu
+      display: block
+  >.down-menu
+    display: none
+    position: absolute
+    top: 2rem
+    left: -8.5rem
+    width: 15rem
+    z-index: 2
+    >.triangle
+      width: 0
+      height: 0
+      border-left: 0.5rem solid transparent
+      border-right: 0.5rem solid transparent
+      border-bottom: 1rem solid white
+      margin-left: 8.5rem
+      z-index: 2
+    >.radiu-square
+      width: 15rem
+      height: 10rem
+      background-color: white
+      border-radius: 3px
+      box-shadow: 2px 1px 2px rgba(0,0,0,0.5)
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-around
+      align-content: center
+      >*
+        margin: 0.2rem 1rem
+      span
+        font-weight: bold
+        a
+          color: $title-text-color
+      a
+        font-size: 0.8rem
+        color: $text-color
+        &:hover
+          color: $main-color
+          cursor: pointer
+      hr
+        width: 13rem
+        height: 1px
+        background-color: darkgrey
+        border: none
+      p
+        position: relative
+        left: 3.5rem
+        font-size: 0.75rem
+        a
+          color: $sub-text-color
+          margin: 0 0.2rem
+
+// --------- nav-style --------- //
+@mixin navstyle ($isBlack, $color, $isSearch)
+  $black: 1
+  @if $isBlack
+    $black: 2
+  >img:nth-of-type(#{$black})
+    display: none
+  >span
+    &:hover
+      border-bottom: 0.2rem solid $color
+    a
+      font-weight: 800
+      color: $color
+  .nav-hr
+    width: 1px
+    height: 1.3rem
+    background-color: $color
+  .nav-drop-more
+    margin-right: 10rem
+    @if $isSearch
+      margin-right: 35rem
+    >i
+    color: $color
+  #nav-search
+    @if $isSearch
+      display: none
+    .search-bar
+
+// --------- nav-style-one --------- //
+.nav-style-one
+  #nav-signup
+    color: $colour-matching
+    border: 1px solid rgba(240, 38, 44, 0.5)
+    background-color: rgba(240, 38, 44, 0.5)
+    &:hover
+      border: 1px solid rgba(240, 38, 44, 1)
+      background-color: rgba(240, 38, 44, 1)
+  #nav-signin
+    color: $colour-matching
+    border: 1px solid $colour-matching
+    &:hover
+      background-color: $colour-matching
+      color: $title-text-color
+  @include navstyle ($isBlack: true, $color: $colour-matching, $isSearch: true)
+
+// --------- nav-style-two --------- //
+.nav-style-two
+  background-color: $colour-matching
+  @include navstyle ($isBlack: false, $color: $title-text-color, $isSearch: false)
+  #nav-signup
+    color: $colour-matching
+    border: 1px solid rgba(240, 38, 44, 1)
+    background-color: rgba(240, 38, 44, 1)
+    &:hover
+      border: 1px solid #dc1015
+      background-color: #dc1015
+  #nav-signin
+    color: $title-text-color
+    border: 1px solid $title-text-color
+    &:hover
+      background-color: #f2f2f2

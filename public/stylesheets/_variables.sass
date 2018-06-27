@@ -1,0 +1,45 @@
+
+// ========== global variables ========== //
+$base-font-family : "微软雅黑"
+$main-color: #ff6600
+$colour-matching: #ffffff
+$title-text-color: #333333
+$text-color: #666666
+$sub-text-color: #999999
+
+$header-height: 45rem
+
+// ========== global config ========== //
+*
+  margin: 0
+  padding: 0
+  font-family: $base-font-family
+a
+  text-decoration: none
+  cursor: pointer
+.clear
+  clear: both
+.placeholder
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+  i
+    color: white
+@mixin img-box($width, $height)
+  width: $width
+  height: $height
+  overflow: hidden
+  background-color: $sub-text-color
+  img
+    width: 100%
+@mixin flex($justify-content: center, $align-items: center)
+  display: flex
+  justify-content: $justify-content
+  align-items: $align-items
+
+@mixin relative($top: 0, $left: 0)
+  position: relative
+  top: $top
+  left: $left

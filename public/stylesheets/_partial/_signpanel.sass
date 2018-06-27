@@ -1,0 +1,106 @@
+.rotateY
+    transform: rotateY(0deg) !important
+    transition: all 0.5s
+
+#CoverPanel
+  height: 100%
+  width: 100%
+  position: fixed
+  top: 0
+  right: 0
+  background-color: rgba(0 ,0 ,0 , 0.3)
+  z-index: 3
+  @include flex()
+  display: none
+  .SignPanel
+    height: 23rem
+    width: 32rem
+    background-color: white
+    border-radius: 10px
+    @include flex()
+    align-content: center
+    flex-wrap: wrap
+    position: relative
+    transform-origin: center
+    transform: rotateY(90deg)
+    display: none
+    >*:not(.close)
+      margin: 0.3rem 5rem
+      position: relative
+      top: -0.8rem
+    >img
+      width: 9rem
+    >.signText
+      width: 22rem
+      height: 2.5rem
+      border: 1px solid #808080
+      border-radius: 5px
+      -webkit-border-radius: 5px
+      @include flex()
+      color: #808080
+      >*
+        margin: 0 0.2rem
+      >.text-hr
+        width: 1px
+        height: 1.3rem
+        background-color: #808080
+      >.text
+        width: 22rem
+        height: 2rem
+        background-color: transparent
+        outline: none
+        border: none
+        color: black
+        font-size: 0.8rem
+        text-indent: 0.5rem
+    .checkbox
+      width: 24rem
+      height: 1rem
+      display: flex
+      align-items: center
+      font-size: 0.8rem
+      color: #808080
+      .relative
+        @include relative(0, 14.5rem)
+      >a
+        color: orange
+        &:hover
+          text-decoration: underline
+    .signbtn
+      width: 24rem
+      height: 2rem
+      @include flex()
+      border: 1px solid #888888
+      background-color: #BEBDBD
+      color: #888888
+      border-radius: 5px
+      &:hover
+        border: 1px solid orange
+        background-color: orange
+        color: white
+        cursor: pointer
+    .panel-hr
+      @include flex()
+      >hr
+        border: none
+        width: 6.5rem
+        margin: 0 0.5rem
+        height: 1px
+        background-color: #A9A9A9
+      >a
+        color: #A9A9A9
+        font-size: 0.8rem
+    .close
+      position: absolute
+      top: 1em
+      right: 1em
+      &:hover
+        transform-origin: center
+        transform: scale(1.1)
+        cursor: pointer
+    >.Switch
+      height: 1rem
+      font-size: 0.8rem
+      color: #888888
+      >a
+        color: orange

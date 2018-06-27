@@ -1,0 +1,35 @@
+header
+  #nav(class= nav_style)
+    img(src=placeholder, data-original="/images/yiyun_logo1.png")
+    img(src=placeholder, data-original="/images/yiyun_logo2.png")
+    - var sublinks = { "首页": '', "发现": 'discover', "最新": 'new', "活动": 'activity'}
+    each val, key in sublinks
+      span
+        a(href=val)= key
+    .nav-hr
+    .nav-drop-more
+      i.fa.fa-ellipsis-h
+      .down-menu
+        .triangle
+        .radiu-square
+          - var items = {"漫画/插画": '', "平面": '', "UI/UX": ''}
+          each val, key in items
+            span
+              a(href=val)= key
+          hr
+          - var items = {"摄影": '', "人文艺术": '', "美食": '', "家居": '', "建筑设计": '', "旅行": '', "游戏": '', "运动": '', "手工艺": ''}
+          each val, key in items
+            a(href=val)= key
+          hr
+          p
+            - var items = {"关于": '', "反馈": '', "微博": ''}
+            each val, key in items
+             a(href=val)= key
+    #nav-search
+      .search-bar
+        input(type="text",placeholder="搜索你喜欢的")
+        i.fa.fa-search
+    #nav-signup 注册
+    #nav-signin 登录
+    include piece-signpanel
+  include piece-banner
